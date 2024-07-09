@@ -1,0 +1,35 @@
+{
+  "name": "@eggtestui/ui",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": ["vue", "ui", "component library"],
+  "author": "egg",
+  "license": "MIT",
+  "scripts": {
+    "build": "vite build",
+    "test": "echo test"
+  },
+  "main": "./dist/eggtestui-ui.umd.js",
+  "module": "./dist/eggtestui-ui.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/eggtestui-ui.umd.js",
+      "module": "./dist/eggtestui-ui.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "vue": ">=3.0.0"
+  },
+  "dependencies": {
+    "@eggtestui/button": "workspace:^",
+    "@eggtestui/input": "workspace:^",
+    "@eggtestui/shared": "workspace:^"
+  },
+  "devDependencies": {}
+}
