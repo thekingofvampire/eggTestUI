@@ -2,6 +2,7 @@
   "name": "egg-test-ui",
   "private": true,
   "scripts": {
+    "commit": "git-cz",
     "prepare": "husky install",
     "lint:script": "eslint --ext .js,.jsx,.ts,.tsx,.vue --fix ./",
     "lint:style": "stylelint --fix ./**/*.{css,scss,vue,html}",
@@ -14,11 +15,13 @@
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
+    "@commitlint/cz-commitlint": "^19.2.0",
     "@eslint/eslintrc": "^3.1.0",
     "@types/node": "^20.14.9",
     "@typescript-eslint/eslint-plugin": "^7.15.0",
     "@typescript-eslint/parser": "^7.15.0",
     "@vitejs/plugin-vue": "^5.0.5",
+    "commitizen": "^4.3.0",
     "eslint": "^8.45.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^17.1.0",
@@ -26,6 +29,7 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-vue": "^9.15.1",
     "husky": "^8.0.0",
+    "mrm": "^4.1.22",
     "prettier": "^3.3.2",
     "rimraf": "^5.0.7",
     "sass": "^1.77.6",
@@ -42,5 +46,31 @@
   },
   "dependencies": {
     "vue": "^3.4.31"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.css": "stylelint --fix",
+    "*.{js,css,md}": "prettier --write",
+    "**/*.{js,jsx,tsx,ts}": [
+      "eslint --fix"
+    ],
+    "**/*.{scss,css}": [
+      "stylelint --fix"
+    ],
+    "**/*.vue": [
+      "eslint --fix",
+      "stylelint --fix"
+    ],
+    "**/*.{html,json,md}": [
+      "prettier --write"
+    ]
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
   }
 }
