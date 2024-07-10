@@ -10,13 +10,13 @@ module.exports = {
   // 使用单引号
   singleQuote: true,
   // 末尾需要有逗号
-  trailingComma: "all",
+  trailingComma: 'all',
   // 大括号内的首尾需要空格
   bracketSpacing: true,
   // 标签闭合不换行
   bracketSameLine: true,
   // 箭头函数尽量简写
-  arrowParens: "avoid",
+  arrowParens: 'avoid',
   // 行位换行符
-  endOfLine: "lf",
+  endOfLine: 'lf',
 };
