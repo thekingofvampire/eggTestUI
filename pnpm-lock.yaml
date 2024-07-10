@@ -24,6 +24,9 @@ importers:
       '@eslint/eslintrc':
         specifier: ^3.1.0
         version: 3.1.0
+      '@stylistic/stylelint-plugin':
+        specifier: ^2.1.2
+        version: 2.1.2(stylelint@16.6.1(typescript@5.5.3))
       '@types/node':
         specifier: ^20.14.9
         version: 20.14.10
@@ -84,9 +87,6 @@ importers:
       stylelint-config-standard-scss:
         specifier: ^13.1.0
         version: 13.1.0(postcss@8.4.39)(stylelint@16.6.1(typescript@5.5.3))
-      stylelint-stylistic:
-        specifier: ^0.4.5
-        version: 0.4.5(stylelint@16.6.1(typescript@5.5.3))
       tsx:
         specifier: ^4.16.2
         version: 4.16.2
@@ -564,6 +564,12 @@ packages:
   '@sindresorhus/is@0.14.0':
     resolution: {integrity: sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==}
     engines: {node: '>=6'}
+
+  '@stylistic/stylelint-plugin@2.1.2':
+    resolution: {integrity: sha512-JsSqu0Y3vsX+PBl+DwULxC0cIv9C1yIcq1MXkx7pBOGtTqU26a75I8MPYMiEYvrsXgsKLi65xVgy1iLVSZquJA==}
+    engines: {node: ^18.12 || >=20.9}
+    peerDependencies:
+      stylelint: ^16.0.2
 
   '@szmarczak/http-timer@1.1.2':
     resolution: {integrity: sha512-XIB2XbzHTN6ieIjfIMV9hlVcfPU26s2vafYWQcZHWXHOxiaRZYEDKEwdl129Zyg50+foYV2jCgtrqSA6qNuNSA==}
@@ -2885,12 +2891,6 @@ packages:
     peerDependencies:
       stylelint: ^16.0.2
 
-  stylelint-stylistic@0.4.5:
-    resolution: {integrity: sha512-E3Mz68yqmZe5Zk5UraR5MA2DjxgfE2TCZerDPk+fcd9dwLjwRupAt0j+Q1fBJRE3vhh3PvToKDhvhfMHf1tfNg==}
-    deprecated: This package has been deprecated in favor of @stylistic/stylelint-plugin
-    peerDependencies:
-      stylelint: ^15.0.0
-
   stylelint@16.6.1:
     resolution: {integrity: sha512-yNgz2PqWLkhH2hw6X9AweV9YvoafbAD5ZsFdKN9BvSDVwGvPh+AUIrn7lYwy1S7IHmtFin75LLfX1m0D2tHu8Q==}
     engines: {node: '>=18.12.0'}
@@ -3620,6 +3620,17 @@ snapshots:
     optional: true
 
   '@sindresorhus/is@0.14.0': {}
+
+  '@stylistic/stylelint-plugin@2.1.2(stylelint@16.6.1(typescript@5.5.3))':
+    dependencies:
+      '@csstools/css-parser-algorithms': 2.7.1(@csstools/css-tokenizer@2.4.1)
+      '@csstools/css-tokenizer': 2.4.1
+      '@csstools/media-query-list-parser': 2.1.13(@csstools/css-parser-algorithms@2.7.1(@csstools/css-tokenizer@2.4.1))(@csstools/css-tokenizer@2.4.1)
+      is-plain-object: 5.0.0
+      postcss-selector-parser: 6.1.0
+      postcss-value-parser: 4.2.0
+      style-search: 0.1.0
+      stylelint: 16.6.1(typescript@5.5.3)
 
   '@szmarczak/http-timer@1.1.2':
     dependencies:
@@ -6163,15 +6174,6 @@ snapshots:
       postcss-resolve-nested-selector: 0.1.1
       postcss-selector-parser: 6.1.0
       postcss-value-parser: 4.2.0
-      stylelint: 16.6.1(typescript@5.5.3)
-
-  stylelint-stylistic@0.4.5(stylelint@16.6.1(typescript@5.5.3)):
-    dependencies:
-      is-plain-object: 5.0.0
-      postcss: 8.4.39
-      postcss-media-query-parser: 0.2.3
-      postcss-value-parser: 4.2.0
-      style-search: 0.1.0
       stylelint: 16.6.1(typescript@5.5.3)
 
   stylelint@16.6.1(typescript@5.5.3):
