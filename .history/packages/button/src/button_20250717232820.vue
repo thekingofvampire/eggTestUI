@@ -16,7 +16,10 @@ const btnCLick = () => {
 </script>
 
 <template>
-  <button class="egg-button" @click="btnCLick">
+  <button
+    class="egg-button"
+    @click="btnCLick"
+  >
     <slot />
   </button>
 </template>
