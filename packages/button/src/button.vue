@@ -17,6 +17,9 @@ const btnCLick = () => {
 const obj = {
   a: 1
 }
+const obj1 = {
+  a: 1,
+}
 </script>
 
 <template>
