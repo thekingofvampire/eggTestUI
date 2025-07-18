@@ -13,6 +13,10 @@ const props = withDefaults(defineProps<Props>(), {
 const btnCLick = () => {
   hello(props.text);
 };
+
+const obj = {
+  a: 1
+}
 </script>
 
 <template>
